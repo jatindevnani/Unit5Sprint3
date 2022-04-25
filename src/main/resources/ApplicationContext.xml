@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+    <!-- Circle Class bean -->
+    <bean id="circle" class="_Q3_Spring_Project_Shapes.Circle">
+    	<constructor-arg value="5"/>
+    </bean>
+    
+    
+    <!-- Square class bean-->
+    <bean id="square" class="_Q3_Spring_Project_Shapes.Square">
+    	<constructor-arg value="10"/>
+    </bean>
+    
+    
+    <!-- Rectangle class bean-->
+    <bean id="rectangle" class="_Q3_Spring_Project_Shapes.Rectangle">
+    	<constructor-arg value="5"/>
+    	<constructor-arg value="6"/>
+    </bean>
+    
+    
+    <!-- Service class bean any of the above beans can be passed here-->
+    <bean id="service" class="_Q3_Spring_Project_Shapes.Service">
+    	<property name="shape" ref="square"/>
+    </bean>
+    
+    <bean id="presentation" class="_Q3_Spring_Project_Shapes.Presentation">
+    	<property name="service" ref="service"/>
+    </bean>
+
+</beans>
